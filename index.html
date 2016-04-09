@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LeMeister</title>
+
+    <!-- Jquery Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Vegas Core -->
+    <link rel="stylesheet" href="js/vegas.min.css">
+    <script src="js/vegas.min.js"></script>
+    
+
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    
+    <!-- High Charts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
+    <script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
+    
+    
+    <!-- Jquery Appear Late -->
+    <script src="https://rawgit.com/morr/jquery.appear/master/jquery.appear.js"></script>
+    
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+    
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar">
+    <!-- LeBron James Data for plot -->
+    <pre id="csv" style="display:none">
+    Season,Minutes Played,Field Goals,Field Goal Attempts, Points
+    2003_04,3122,622,1492,1654
+    2004_05,3388,795,1684,2175
+    2005_06,3361,875,1823,2478
+    2006_07,3190,772,1621,2132
+    2007_08,3027,794,1642,2250
+    2008_09,3054,789,1613,2304
+    2009_10,2966,768,1528,2258
+    2010_11,3063,758,1485,2111
+    2011_12,2326,621,1169,1683
+    2012_13,2877,765,1354,2036
+    2013_14,2902,767,1353,2089
+    2014_15,2493,624,1279,1743
+    2015_16,2494,670,1315,1752
+    </pre>
+    
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo.png" style="max-width:175px; margin-top: -7px;" alt="LeMeister"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden active">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#statlytics">Statlytics</a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#predictions">Algorithmic Predictions</a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="#fan">Fan Engagement</a>
+                        </li>						
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+    </nav>
+    
+        <!-- Header -->
+    <header style="background-color:black">
+        <div class="container">
+            <div class="intro-text text-center">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img src="img/iphone.png" class="img-responsive">
+                    </div>
+                    <div class="col-sm-7 intro-heading">
+                    
+                        <h1>Welcome to Lemeister</h1>
+                        <h4>Lemeister is a user friendly platform focused on sports data analytics, predictive gamification and user interaction. Join us today and be part of the disruptive innovation yet to take the sports industry by storm!</h4>
+                        
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="subscribe">Subscribe and we'll update you on our progress and notify you when we launch!</label>
+                              
+                                <div class="row">
+                                    <div class="col-sm-10"><input class="form-control" id="comment"></input></div>
+                                    <div class="col-sm-2"><button type="button" class="btn btn-success">Subscribe</button></div>
+                                </div>
+                
+                              
+                              
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="bounce"><a href="#statlytics"><i class="fa fa-angle-double-down"></i></a></div>
+				<!--<a href="#analytics" class="page-scroll btn btn-xl">Tell Me More</a>-->
+                
+            </div>
+        </div>
+    </header>
+    
+        <!-- Statlytics Section -->
+	<section id="statlytics" class="bg-dark-gray">
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Statlytics</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 description">
+                   <p>Gain invaluable insights on your favourite sport teams and players via Lemeister’s in-house Statlytics technology</p>
+                </div>
+                <div class="col-sm-8">
+                    <div id="container1" style="min-width: 300px; height: 350px; margin: 1em"></div>
+                </div>
+            </div>
+		</div>
+	</section>
+    
+        <!-- Predictions Section -->
+	<section id="predictions" class="bg-black">
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Algorithmic Predictions</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7">
+                    <div id="container2" style="min-width: 300px; height: 400px; margin: 1em"></div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="col-xs-12 description">
+                            <p>Our proprietary machine learning backed algorithms will keep you ahead of the curve in your sports bets and fantasy competitions</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <div id="container3" style="min-width: 300px; max-height:400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+    
+        <!-- Fan Engagement Section -->
+	<section id="fan" class="bg-dark-gray">
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Fan Engagement</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="container4" class="trending" style="margin-top:50px;">
+                        <h5>Trending News</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 description">
+                    <p>Get live updates on the latest trending news and transfers and incorporate visual analytics in your personalized blog and social media feed</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/blogs.jpg" class="img-responsive" style="margin:0 auto; margin-top:50px; ">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright &copy; 2016 LeMeister Corporation</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
